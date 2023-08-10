@@ -13,7 +13,7 @@ resource "random_string" "random" {
 }
 
 resource "azurerm_storage_account" "sa" {
-  name = "sa${project-name}e01${random_string.random.result}"
+  name = "sa${var.project-name}e01${random_string.random.result}"
 
   resource_group_name = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
