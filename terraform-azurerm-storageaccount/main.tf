@@ -7,13 +7,8 @@ resource "azurerm_resource_group" "rg" {
   }
 }
 
-resource "random_string" "random" {
-  length           = 6
-  special          = false
-}
-
 resource "azurerm_storage_account" "sa" {
-  name = "sa${var.project-name}e01${random_string.random.result}"
+  name = "sa${var.project-name}e01"
 
   resource_group_name = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
